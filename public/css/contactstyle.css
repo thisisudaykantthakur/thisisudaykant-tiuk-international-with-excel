@@ -1,0 +1,288 @@
+@font-face {
+  font-family:"lato";
+  src:url("https://use.typekit.net/af/180254/00000000000000000001522c/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"),url("https://use.typekit.net/af/180254/00000000000000000001522c/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"),url("https://use.typekit.net/af/180254/00000000000000000001522c/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+  font-display:auto;font-style:normal;font-weight:400;
+  }
+  
+  @font-face {
+  font-family:"amaranth";
+  src:url("https://use.typekit.net/af/29950a/00000000000000007735a119/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"),url("https://use.typekit.net/af/29950a/00000000000000007735a119/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"),url("https://use.typekit.net/af/29950a/00000000000000007735a119/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+  font-display:auto;font-style:normal;font-weight:400;
+  }
+  @import url("https://use.typekit.net/qdy8dcw.css");
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+body{
+  background-color: #F6DB6F;
+  color:  #ECF0F1;  
+}
+form{
+  display:flexbox;
+  align-items: center;
+  background-color: bisque;
+  width: fit-content;
+  margin: 10px;
+  padding: 10px 15px 10px 10px;
+  border-radius: 25px;
+  border-style: solid;
+  border-color: black;
+  box-shadow: 02px 02px 02px 01px black;
+  color: black;
+}
+label{
+  padding: 10px;
+}
+input[type="submit"]{
+  width: 100%;
+  background-color:steelblue;
+  color: aliceblue;
+  font-family: ubuntu;
+  font-weight: bold;
+  font-size: large;
+  border-radius: 25px;
+  outline: none;
+  border-style: none;
+  padding:0px 0px 10px 0px;
+}
+input[type="submit"]:hover{
+  background-color: aliceblue;
+  color: steelblue;
+  cursor: pointer;
+  outline: none;
+}
+input[type="text"],input[type="email"]
+{
+  width: 100%;
+  background-color:steelblue;
+  color: aliceblue;
+  font-family: ubuntu;
+  font-size: large;
+  border-radius: 25px; 
+  outline: none;
+  border-style: solid;
+  border-color: aliceblue;
+  padding: 05px;
+  margin: 0px 06px 0px 0px;
+  
+}
+select{
+  width: 100%;
+  background-color:steelblue;
+  color: aliceblue;
+  font-family: ubuntu;
+  font-size: large;
+  border-radius: 40px; 
+  outline: none;
+  border-style: solid;
+  border-color: aliceblue;
+  padding: 05px;
+  margin: 0px 06px 0px 0px; 
+  cursor: pointer;
+}
+select:hover{
+  background-color: aliceblue;
+  color: steelblue;
+  cursor: pointer;
+  
+}
+textarea{
+  width: 100%;
+  background-color:steelblue;
+  color: aliceblue;
+  font-family: ubuntu;
+  font-size: large;
+  border-radius: 25px; 
+  outline: none;
+  border-style: solid;
+  border-color: aliceblue;
+  padding: 05px;
+  margin: 0px 06px 0px 0px;
+}
+
+  
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    position: relative;
+    background-color: #F6DB6F;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+  }
+  
+  /* Add Animation */
+  @-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+  }
+  
+  @keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+  }
+  
+  /* The Close Button */
+  .close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .modal-header {
+    padding: 2px 16px;
+    background-color:#2E4053;
+    color: white;
+    font-family: "lato",sans-serif;
+    border-top-left-radius: 25px;
+    border-top-right-radius:25px ;
+  }
+  
+  .modal-body {padding: 2px 16px;}
+  
+  .modal-footer {
+    padding: 2px 16px;
+    background-color:#2E4053;
+    color: white;
+    font-size: xx-small;
+    text-align: center;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+  }
+   
+            .header{
+              position: fixed;
+                top:0px;
+                left:0px;
+                right: 0px;
+                z-index: 1;
+                background-color: rgba(46, 64, 83, 0.5);
+            }
+            .logo-tiuk{
+              font-family: lato,sans-serif;
+                background-color: #2E4053;
+                font-weight:bold;
+                font-style:normal;
+                font-size: 12px;
+                text-shadow:01px 01px 03px #FC5106;
+                width: fit-content;
+                padding: 05px 05px 019px 05px;
+                border-radius: 05px;
+                border-color: #ECF0F1;
+                top:02px;
+                left: 02px;
+                margin: 02px;
+                display: inline-flex;
+                clip-path: polygon(0 0, 100% 0, 100% 57%, 63% 63%, 51% 80%, 35% 61%, 0 59%);
+            }
+           .navigation-tiuk{
+               text-transform: uppercase;
+               float: right;
+               padding: 05px;
+               font-family:amaranth, sans-serif;
+               font-size: small;
+               display:inline-flex;
+           }
+           .navigation-tiuk a{
+               text-decoration: none;
+               color: #2E4053;
+               padding: 05px;
+           }
+           .tiuk-pointer{
+               cursor: pointer;
+           }
+           .navigation-tiuk a:hover{
+               text-transform: uppercase;
+               color: #F0F3F4;
+               text-shadow: 02px 02px 02px black;
+           }
+          #active-contact{
+                text-transform: uppercase;
+                color: #F0F3F4;
+                text-shadow: 02px 02px 02px black;
+           } 
+           .progress-container {
+                width: 100%;
+                height: 1px;
+                background:#2E4053;
+                }
+    
+                .progress-bar {
+                height: 1px;
+                background:#F0F3F4;
+                width: 0%;
+                }
+    
+    
+            .card-tiuk {
+              box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+              max-width: 300px;
+              margin: auto;
+              text-align: center;
+              font-family:amaranth, sans-serif ;
+              
+            }
+    
+            .title-card-tiuk{
+              color: grey;
+              font-size: 18px;
+            }
+    
+            .btn {
+              border: none;
+              outline: 0;
+              display: inline-block;
+              padding: 8px;
+              color: white;
+              background-color:#2E4053;
+              text-align: center;
+              cursor: pointer;
+              width: 100%;
+              font-size: 18px;
+            }
+    
+            .social a {
+              text-decoration: none;
+              font-size: 22px;
+              color:#2E4053;
+            }
+    
+            .btn:hover, a:hover {
+              opacity: 0.7;
+            }

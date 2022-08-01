@@ -1,0 +1,65 @@
+.ad{
+    width: 50%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:0;
+}
+.ad-card{
+    width: 350px;
+    border-radius: 1rem;
+    background: #364f6b;
+    box-shadow: 4px 4px 15px rgba(#000, 0.15);
+    position: relative;
+    color: #434343;
+}
+.ad-card .ad-card-container{
+    padding: 2rem;
+    width: 100%;
+    height: 100%;
+    background: white;
+    border-radius: 1rem;
+    position: relative;
+    border: 2px solid;
+}
+.ad-card .ad-card-header{
+    margin-bottom: 1rem;
+    font-family: 'Poppins';
+    color: #ff304f;
+    font-size: medium;
+}
+.ad-card::before{
+    position: absolute;
+    top: 2.5rem;
+    right: -0.7rem;
+    content: '';
+    background: #fc5185;
+    height: 28px;
+    width: 28px;
+    transform: rotate(45deg);
+}
+.ad-card::after{
+    position: absolute;
+    content: attr(data-label);
+    top: 20px;
+    right: -1.1rem;
+    padding: 0.5rem;
+    width: 10rem;
+    background: #fc5185;
+    color: white;
+    text-align: center;
+    font-family: 'Roboto',sans-serif;
+    box-shadow: 4px 4px 15px rgba(26, 35, 126, 0.2);
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+.ad-card-body{
+    padding-left: 0;
+    
+}
+.ad-card-body img{
+    width: 280px;
+    height: 200px;
+    border-radius: 05px;
+}
