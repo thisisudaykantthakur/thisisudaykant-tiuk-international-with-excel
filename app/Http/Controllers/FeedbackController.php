@@ -18,6 +18,7 @@ class FeedbackController extends Controller
 {
     public function add(Request $request)
     {
+        try{
         //create object of table with tablename
         $feedback =new Feedback;
         $feedback->name= $request->name;
@@ -26,41 +27,79 @@ class FeedbackController extends Controller
         $feedback->msg= $request->detail;
         $feedback->save();
         return view('contact');
+        }
+        catch(\Exception $e){
+            return view('feedback.erroInfo');
+        }
     }
 
+    //Dashboard function
     public function display(){
-        $list = Feedback::select('id','name')->paginate(15);
+        try{
+        //showing data with id and name limited it paginated number and displaying
+        $list = Feedback::select('id','name')->paginate(7);
         return view('feedback.layout',['data'=>$list]);
+        }
+        catch(\Exception $e){
+            return view('feedback.erroInfo');
+        }
     }
 
+    //Display function
     public function destroy(Feedback $feedback,$id){
+        try{
             $data=Feedback::find($id);
             $data->delete();
             return redirect('panel.dashboard');
+        }
+        catch(\Exception $e){
+            return view('feedback.erroInfo');
+        }
     }
+
+    //Display Message for each function
     public function show($id){
+        try{
         $information = app('App\Http\Controllers\AuthController')->dashboard()->information;
         $list = Feedback::select('id','name','email','subject','msg','created_at')->where('id','=',$id)->get();
         $data=json_decode($list);
         return view('feedback.show',compact('data','information'));
+        }
+        catch(\Exception $e){
+            return view('feedback.erroInfo');
+        }
     }
 
+    //Generating PDF function
     public function pdfGenerate($id){
+        try{
         $data = Feedback::select('id','name','email','subject','msg','created_at')->where('id','=',$id)->get();
         $name=$data[0]->name;
         $pdf= PDF::loadView('feedback.showpdf',compact('data'))->setOptions(['defaultFont' => 'Verdana, Geneva, Tahoma, sans-serif']);
-        //Storage::put('public/feedback-pdf/'.$name.'.pdf', $pdf->output());
+        $pdf->save(public_path('/feedback-pdf/'.$name.'.pdf'));
         return $pdf->download($name.'.pdf');
+        }
+        catch(\Exception $e){
+            return view('feedback.erroInfo');
+        }
     }
     
+    //Reply message format function
     public function replyMe($id){
+        try{
         $information = app('App\Http\Controllers\AuthController')->dashboard()->information;
         $list = Feedback::select('id','name','email','subject','msg','created_at')->where('id','=',$id)->get();
         $data=json_decode($list);
         return view('feedback.emailreply',compact('data','information'));
+        }
+        catch(\Exception $e){
+            return view('feedback.erroInfo');
+        }
     }
     
+    //Sending mail
     public function mailSystem(Request $request,$id){
+        try{
         $information = app('App\Http\Controllers\AuthController')->dashboard()->information;
         $list = Feedback::select('id','name','email','subject','msg','created_at')->where('id','=',$id)->get();
         $data=json_decode($list);
@@ -74,12 +113,22 @@ class FeedbackController extends Controller
                 $message->to($to_email)->subject('tiuk reply');
             });  
         return view('feedback.show',compact('data','information'));
+        }
+        catch(\Exception $e){
+            return view('feedback.erroInfo');
+        }
     }
-
+    
+     //Generating Excel sheet
      public function excel($id)
         {
+            try{
             $name = Feedback::select('name')->where('id','=',$id)->get();
             return Excel::download(new FeedbackExport, ''.$name[0]->name.'-excel.xlsx');
+            }
+            catch(\Exception $e){
+                return view('feedback.erroInfo');
+            }
         }
 
     

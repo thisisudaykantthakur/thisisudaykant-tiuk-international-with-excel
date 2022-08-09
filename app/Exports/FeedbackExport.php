@@ -11,12 +11,12 @@ class FeedbackExport implements FromCollection
 {
     public function headings():array{
             return [
-                'id',
-                'name',
-                'email',
-                'subject',
-                'msg',
-                'created_at'
+                "Id",
+                "Name",
+                "Email",
+                "Subject",
+                "Message",
+                "CreatedAt"
             ];
     }
     /**
@@ -26,8 +26,6 @@ class FeedbackExport implements FromCollection
     {
         $idi=$_SERVER['REQUEST_URI'];
         $idj=explode('/excel/',$idi);
-
-        //dd($idj[1]);
        return Feedback::select('id','name','email','subject','msg','created_at')->where('id','=',$idj[1])->get();
     }
 }

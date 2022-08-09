@@ -62,16 +62,13 @@
     </style>
 </head>
 <body>
-        <h1 align="center">All Message</h1>
-        @php
-            $count=0;
-        @endphp
+        <h1 align="center">All Message</h1>       
         <center>
         <div class="container-one">
             <table class="table table-bordered table-hover" align="center">
                 <thead style="background-color:gainsboro;">
                 <tr>
-                    <th style="width: 80px;text-align: center;">No.</th>
+                    <th style="width: 80px;text-align: center;"></th>
                     <th>Name</th>
                     <th>Actions</th>
                 </tr>
@@ -79,7 +76,7 @@
             <tbody>     
                 @foreach ($data as $item)
                 <tr>
-                    <td style="background-color:gainsboro;text-align:center;width: 80px;">{{ $count=$count+1 }}</td>
+                    <td style="background-color:gainsboro;text-align:center;width: 80px;">&#183;</td>
                     <td style="text-transform: uppercase;color:navy;">{{$item->name}}</td>
                     <td align="center" style="background-color:wheat;"><a href="/show/{{$item->id}}"><button>Show</button></a> <a href="/delete/{{$item->id}}"><button class="del-btn"> Delete</button></a> </td>
                 </tr>
