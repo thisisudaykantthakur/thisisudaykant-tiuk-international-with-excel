@@ -8,7 +8,14 @@
 </p>
 
 ## PHP  Required Extensions
-1) imagick 
+1) Download and Install imagick
+2) Update php.ini file by adding this line
+       extension_dir = "localhost/_Location_to_your_php/ext_" or "C:/laragon/bin/php/php-8.1.16-Win32-vs16-x64/ext"
+       extension=php_imagick.dll
+3) Restart your server and check with the help of this code
+    <?php
+        phpinfo();
+    ?>
 ## PDF Generator pack
 1) https://github.com/barryvdh/laravel-dompdf
 ## Excel
